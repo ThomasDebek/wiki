@@ -1,0 +1,13 @@
+%h2 This is the article
+
+- @articles.each do |article|
+  %h2= link_to article.title, article
+  %p
+    Published at
+    = article.created_at.strftime('%b %d, %Y')
+  %p= truncate(article.content, length: 200)
+
+  - if is_there_something?(article)
+    %p We have someone thing
+
+= link_to 'New article', new_article_path

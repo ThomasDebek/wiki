@@ -9,6 +9,7 @@ gem 'haml'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'simple_form'
+gem 'jquery-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'

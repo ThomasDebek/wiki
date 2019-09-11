@@ -1,0 +1,4 @@
+= simple_form_for @articles, html: {multipart: true } do |f|
+  = f.input :title, label: 'Title'
+  = f.input :content, label: 'Content'
+  = f.submit
