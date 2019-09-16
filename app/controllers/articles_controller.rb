@@ -9,7 +9,8 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @articles = Article.new
+    #@article = Article.new
+    @article = current_user.articles.build
   end
 
   def edit
@@ -19,7 +20,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    #@article = Article.new(article_params)
+    @article = current_user.articles.build(article_params)
     if @article.save
       redirect_to @article
     else
@@ -47,7 +49,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content)
+    params.require(:article).permit(:title, :content, :email)
   end
 
   def set_article
