@@ -7,6 +7,7 @@ ruby '2.6.2'
 #new gems
 gem 'haml'
 gem 'bootstrap-sass'
+gem 'sassc-rails'
 gem 'devise'
 gem 'simple_form'
 gem 'jquery-rails'
