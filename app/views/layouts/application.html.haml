@@ -12,6 +12,19 @@
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           %li= link_to "New Article", new_article_path
+          Logged in as
+          = succeed "." do
+            %strong= current_user.email
+          = link_to 'Edit profile', edit_user_registration_path
+          |
+          \#{link_to "Logout", destroy_user_session_path, method: :delete}
+        - else
+          = link_to "Sign up", new_user_registration_path
+          |
+          \#{link_to "Login", new_user_session_path}
+
+
+
   %p.notice= notice
   %p.alert= alert
 
@@ -24,3 +37,9 @@
           %li= link_to "All Articles", root_path, class: "list-group-item"
           - Category.all.each do |category|
             %li= link_to category.name, articles_path(category: category.name), class: "list-group-item"
+
+
+
+
+
+

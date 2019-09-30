@@ -10,13 +10,8 @@
   %p= truncate(article.content, length: 200)
 
 
-  - if is_there_something?(article)
-    %p We have someone thing
-
-- if user_signed_in?
-  = succeed "." do
-    %strong= current_user.email
-    = link_to 'New article', new_article_path
+/*  - if is_there_something?(article)
+/*    %p We have someone thing
 
 
 
